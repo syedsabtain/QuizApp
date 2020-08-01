@@ -68,7 +68,7 @@ function App() {
 
         if(question2.length===0)
         {
-            alert('alert wait data is loading')
+            alert('Try different Quiz pattern this one is not available')
         }
         else{
             setCount(count);
