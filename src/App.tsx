@@ -49,13 +49,11 @@ function App() {
 
         async function getData() {
             const data : quiz[] = await quizApi(amount, level, category,typee);
-            console.log(data);
             setQuestion(data);
 
         }
-        console.log(quizdata);
         getData();
-    }, [a])
+    }, [amount,level,category,typee,a])
 
     const handleradio = (e : ChangeEvent<HTMLInputElement>) : void => {
 
@@ -78,9 +76,6 @@ function App() {
         const shuffleArray = (array : string[]) => [...array].sort(() => Math.random() - 0.5);
 
         setChoice(shuffleArray(question2[count].incorrect_answers.concat(question2[count].correct_answer)));
-        console.log(quizdata)
-        console.log(question2)
-        console.log(choices);
         setMystyle({display: 'none'});
         setSecond({display: 'block'})
         }
@@ -101,15 +96,11 @@ function App() {
             }
         }
         if (count < question2.length - 1) {
-            console.log(count)
             if (store === quizdata.correct_answer) {
                 setCorrect(++correct);
-                console.log(store)
-                console.log(quizdata.correct_answer)
             } else if (store !== quizdata.correct_answer) {
                 setWrong(++wrong);
-                console.log(store)
-                console.log(quizdata.correct_answer)
+               
             }
             setCount(++count);
             setQuizdata(question2[count]);
@@ -124,22 +115,18 @@ function App() {
     const handlechange = (e : ChangeEvent<HTMLSelectElement>) : void => {
 
         setCategory(parseInt(e.target.value))
-        console.log(category)
 
     }
     const handleamount = (e : ChangeEvent<HTMLInputElement>) : void => {
         setAmount(parseInt(e.target.value))
-        console.log(amount)
     }
     const handlelevel = (e : ChangeEvent<HTMLSelectElement>) : void => {
         setLevel(e.target.value);
-        console.log(level)
 
     }
     const handletype=(e : ChangeEvent<HTMLSelectElement>) : void =>{
 
         setTypee(e.target.value);
-        console.log(typee)
     }
     const handlebackhome =()=>
     {

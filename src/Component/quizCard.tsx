@@ -33,7 +33,6 @@ const Quizcard: React.FC<Card> =({Mystyle,Quizdata,Choices,Store,Count,HandleNex
 
         </form>
         
-        {/* <button onClick={handleback}>Back</button> */}
     </div>
     </div></div>
        
